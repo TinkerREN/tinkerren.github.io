@@ -1,0 +1,58 @@
+{
+  "id": "4412841",
+  "name": "个人网站",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4937000",
+      "name": "github-fill",
+      "font_class": "Github",
+      "unicode": "e885",
+      "unicode_decimal": 59525
+    },
+    {
+      "icon_id": "1220481",
+      "name": "facebook",
+      "font_class": "facebook",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "4936976",
+      "name": "youtube",
+      "font_class": "Youtube",
+      "unicode": "e880",
+      "unicode_decimal": 59520
+    },
+    {
+      "icon_id": "8356570",
+      "name": "Twi",
+      "font_class": "twitter",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "10918080",
+      "name": "bilibili",
+      "font_class": "bilibili",
+      "unicode": "e75d",
+      "unicode_decimal": 59229
+    },
+    {
+      "icon_id": "18166694",
+      "name": "tiktok",
+      "font_class": "douyin",
+      "unicode": "e8db",
+      "unicode_decimal": 59611
+    },
+    {
+      "icon_id": "25689290",
+      "name": "tuchong",
+      "font_class": "tuchong",
+      "unicode": "e705",
+      "unicode_decimal": 59141
+    }
+  ]
+}
