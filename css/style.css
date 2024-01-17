@@ -27,6 +27,7 @@ body {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  
 }
 .offcanvas #page {
   overflow: hidden;

@@ -2,7 +2,8 @@
 	
 	'use strict';
 
-	var isMobile = {
+	var isMobile = 
+	{
 		Android: function() {
 			return navigator.userAgent.match(/Android/i);
 		},
@@ -25,13 +26,32 @@
 
 	
 	var fullHeight = function() {
-
-			$('.js-fullheight').css('height', $(window).height());
-			$(window).resize(function(){
-				$('.js-fullheight').css('height', $(window).height());
+		var scalePercentage; // 提前声明变量
+	
+		if (!isMobile.any()) {
+			scalePercentage = 1.0; // 设置缩放比例
+		} else {
+			scalePercentage = 1.3;
+		}
+	
+		// 缩放 .js-fullheight 元素
+		$('.js-fullheight').css({
+			'height': $(window).height(),
+			'transform': 'scale(' + scalePercentage + ')',
+			'transform-origin': 'center center'
+		});
+	
+		// 监听窗口大小变化事件
+		$(window).resize(function(){
+			// 调整 .js-fullheight 元素的高度和缩放属性
+			$('.js-fullheight').css({
+				'height': $(window).height(),
+				'transform': 'scale(' + scalePercentage + ')',
+				'transform-origin': 'center center'
 			});
+		});
 	};
-
+	
 	// Parallax
 	var parallax = function() {
 		$(window).stellar();
@@ -135,12 +155,12 @@
 	
 	$(function(){
 		contentWayPoint();
-		goToTop();
+		// goToTop();
 		loaderPage();
 		fullHeight();
-		parallax();
-		// pieChart();
-		skillsWayPoint();
+		// parallax();
+		// // pieChart();
+		// skillsWayPoint();
 	});
 
 
