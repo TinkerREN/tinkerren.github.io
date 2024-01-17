@@ -1303,7 +1303,7 @@ input[type="text"] {
   position: relative;
   overflow: hidden; /* 隐藏超出圆形边界的内容 */
 }
-
+ 
 .overlay-content {
   position: absolute;
   top: 0;
@@ -1322,5 +1322,5 @@ input[type="text"] {
 .profile-thumb-container:hover .overlay-content {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.7); 
-}
+} 
 
