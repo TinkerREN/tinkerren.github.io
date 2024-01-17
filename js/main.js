@@ -163,5 +163,29 @@
 		// skillsWayPoint();
 	});
 
-
+	// 鼠标移入 .profile-thumb-container 时的事件处理
+	$('.profile-thumb-container').off('mouseenter').on('mouseenter', function() {
+		// 获取链接元素
+		var overlayContentLink = $('.overlay-content a');
+		
+		// 设置定时器，在一秒后将链接设置为可点击
+		var timer = setTimeout(function() {
+		  overlayContentLink.css('pointer-events', 'auto');
+		}, 500);
+		
+		// 将定时器存储在元素的数据中
+		overlayContentLink.data('timer', timer);
+	  });
+	
+	  // 鼠标移开 .profile-thumb-container 时的事件处理
+	  $('.profile-thumb-container').off('mouseleave').on('mouseleave', function() {
+		// 获取链接元素
+		var overlayContentLink = $('.overlay-content a');
+		
+		// 取消之前的定时器
+		clearTimeout(overlayContentLink.data('timer'));
+		
+		// 将链接设置为不可点击
+		overlayContentLink.css('pointer-events', 'none');
+	  });
 }());
