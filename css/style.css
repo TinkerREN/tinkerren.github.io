@@ -221,7 +221,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-header .display-tc .fh5co-social-icons li a i,
 .fh5co-cover .display-tc .fh5co-social-icons li a i {
-  font-size: 30px;
+  font-size: 28px;
 }
 
 #fh5co-features {
@@ -1329,5 +1329,37 @@ input[type="text"] {
 
 .profile-thumb-container:hover .overlay-content a {
   pointer-events: none; /* 初始设置链接不可点击 */
+}
+
+.qr-code {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 999; /* Ensure it appears on top of other elements */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+}
+
+.qr-code img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container */
+  height: auto; /* Maintain the aspect ratio of the image */
+}
+
+.qr-code h3 {
+  font-family: "ZCOOL QingKe HuangYou", Arial, serif;
+  color: white; /* Text color */
+  font-size: 32px; /* Adjust the font size as needed */
+  margin-top: 10px; /* Adjust the margin-top as needed */
+  margin-bottom: 10px; /* Adjust the margin-bottom as needed */
+}
+
+.social-icon:hover .qr-code {
+  opacity: 1;
+  visibility: visible;
 }
 

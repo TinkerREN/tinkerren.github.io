@@ -189,3 +189,5 @@
 		overlayContentLink.css('pointer-events', 'none');
 	  });
 }());
+
+

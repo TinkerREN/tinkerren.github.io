@@ -9,46 +9,50 @@
 }
 
 .iconfont {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'iconfont' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Github:before {
-    content: "\e885";
-  }
-  
-  .icon-facebook:before {
-    content: "\e60b";
-  }
-  
-  .icon-Youtube:before {
-    content: "\e880";
-  }
-  
-  .icon-twitter:before {
-    content: "\e652";
-  }
-  
-  .icon-bilibili:before {
-    content: "\e75d";
-  }
-  
-  .icon-douyin:before {
-    content: "\e8db";
-  }
-  
-  .icon-tuchong:before {
-    content: "\e705";
-  }
-  
-  
+.icon-bluesky:before {
+  content: "\e602";
+}
+
+.icon-qq:before {
+  content: "\e882";
+}
+
+.icon-telegram:before {
+  content: "\eaf9";
+}
+
+.icon-facebook:before {
+  content: "\e609";
+}
+
+.icon-youtube:before {
+  content: "\e880";
+}
+
+.icon-github:before {
+  content: "\e885";
+}
+
+.icon-bilibili:before {
+  content: "\e75c";
+}
+
+.icon-douyin:before {
+  content: "\e8db";
+}
+
+.icon-tuchong:before {
+  content: "\e705";
+}
+
+.icon-x:before {
+  content: "\e601";
+}
+
