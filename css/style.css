@@ -89,12 +89,13 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-header,
 .fh5co-cover {
-  background-color: transparent;
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
-  height: 600px;
-  width: 100%;
+  background-size: cover; /* 保持纵横比并覆盖整个容器 */
+  background-position: 65% 50%; /* 使背景图片以中心点为中心 */
+  height: 100vh; /* 设置容器高度，保持全屏 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 #fh5co-header .overlay,
 .fh5co-cover .overlay {
@@ -103,7 +104,7 @@ h1, h2, h3, h4, h5, h6, figure {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 144, 0, 0.9);
+  background: rgba(45, 49, 66, 0.8);
 }
 #fh5co-header .display-t,
 .fh5co-cover .display-t {
@@ -114,6 +115,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-cover .display-tc {
   display: table-cell;
   vertical-align: middle;
+  
   height: 600px;
 }
 #fh5co-header .display-tc h1, #fh5co-header .display-tc h2, #fh5co-header .display-tc h3,
