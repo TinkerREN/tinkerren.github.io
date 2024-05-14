@@ -225,6 +225,22 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-cover .display-tc .fh5co-social-icons li a i {
   font-size: 28px;
 }
+#fh5co-header .icp-link {
+  position: absolute; /* 使用绝对定位 */
+  bottom: 0; /* 定位到底部 */
+  left: 0;
+  width: 100%; /* 铺满容器宽度 */
+  text-align: center; /* 文本居中 */
+  padding: 10px 0; /* 添加一些内边距 */
+  background: rgba(0,0,0,0.5); /* 背景色，提高可读性 */
+  color: white; /* 文本颜色 */
+  font-size: 12px;
+}
+
+#fh5co-header .icp-link a {
+  color: white; /* 链接颜色 */
+  text-decoration: none; /* 移除下划线 */
+}
 
 #fh5co-features {
   background: #FF9000;
@@ -1365,3 +1381,74 @@ input[type="text"] {
   visibility: visible;
 }
 
+.friendly-link h4 {
+  font-family: "ZCOOL QingKe HuangYou", Arial, serif;
+  color: white; /* Text color */
+  font-size: 20px; /* Adjust the font size as needed */
+  margin-top: 10px; /* Adjust the margin-top as needed */
+  margin-bottom: 10px; /* Adjust the margin-bottom as needed */
+}
+
+
+.friendly-link-container {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* 黑色半透明背景 */
+  padding: 10px 20px;
+  border-radius: 100px; /* 圆角边框 */
+  width: fit-content;
+ /* 自动计算左右边距，实现水平居中 */
+}
+
+.friendly-link-pic {
+  width: 50px; /* 设置图片大小 */
+  height: 50px; /* 设置图片大小 */
+  border-radius: 50%; /* 圆形图片 */
+  margin-right: 10px; /* 图片和文本之间的间距 */
+  margin-left: 0px
+}
+
+.friendly-link-text {
+  font-family: "ZCOOL QingKe HuangYou", Arial, serif;
+  color: white; /* 文字颜色 */
+  text-decoration: none; /* 移除超链接下划线 */
+  font-size: 16px; /* 字体大小 */
+}
+
+.friendly-link-text:hover {
+  text-decoration: underline; /* 鼠标悬停时下划线 */
+}
+.containers-wrapper {
+  display: flex;
+  gap: 8px; /* 元素间距 */
+  flex-wrap: wrap; /* 允许容器内元素换行 */
+  justify-content: center; /* 水平居中 */
+  margin: 0 25%; /* 左右各留下25%的空间 */
+  width: 72%; /* 容器的宽度为页面宽度的50% */
+  margin: 0 auto;
+}
+
+.fh5co-social-icons i {
+  position: relative; /* 为伪元素定位做准备 */
+  display: inline-block; /* 确保可以使用宽度和高度 */
+}
+
+.fh5co-social-icons i::after {
+  content: ""; /* 必须设置，即使没有内容 */
+  position: absolute;
+  top: 50%; /* 定位到图标的中心 */
+  left: 50%; /* 定位到图标的中心 */
+  width: calc(50px); /* 使背景比图标宽度大10px */
+  height: calc(50px); /* 使背景比图标高度大10px */
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+  opacity: 0; /* 初始透明度为0，使其不可见 */
+  transition: opacity 0.3s; /* 平滑过渡效果 */
+  z-index: -1; /* 确保背景位于图标下方 */
+  border-radius: 50%; /* 使背景成圆形 */
+  transform: translate(-50%, -50%); /* 确保背景准确居中 */
+  box-sizing: border-box; /* 确保边框包含在宽高内 */
+}
+
+.fh5co-social-icons a:hover i::after {
+  opacity: 1; /* 鼠标悬停时使背景变为可见 */
+}
