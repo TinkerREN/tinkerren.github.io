@@ -24,33 +24,65 @@
 		}
 	};
 
+// 	if (isMobile.any()) {
+//     document.querySelector('.containers-wrapper').style.width = '72%';
+// }
 	
-	var fullHeight = function() {
-		var scalePercentage; // 提前声明变量
+// 	var fullHeight = function() {
+// 		var scalePercentage; // 提前声明变量
 	
-		if (!isMobile.any()) {
-			scalePercentage = 1.0; // 设置缩放比例
-		} else {
-			scalePercentage = 1.3;
-		}
+// 		if (!isMobile.any()) {
+// 			scalePercentage = 1.0; // 设置缩放比例
+// 		} else {
+// 			scalePercentage = 1.3;
+// 		}
 	
-		// 缩放 .js-fullheight 元素
-		$('.js-fullheight').css({
-			'height': $(window).height(),
-			'transform': 'scale(' + scalePercentage + ')',
-			'transform-origin': 'center center'
-		});
+// 		// 缩放 .js-fullheight 元素
+// 		$('.js-fullheight').css({
+// 			'height': $(window).height(),
+// 			'transform': 'scale(' + scalePercentage + ')',
+// 			'transform-origin': 'center center'
+// 		});
 	
-		// 监听窗口大小变化事件
-		$(window).resize(function(){
-			// 调整 .js-fullheight 元素的高度和缩放属性
-			$('.js-fullheight').css({
-				'height': $(window).height(),
-				'transform': 'scale(' + scalePercentage + ')',
-				'transform-origin': 'center center'
-			});
-		});
-	};
+// 		// 监听窗口大小变化事件
+// 		$(window).resize(function(){
+// 			// 调整 .js-fullheight 元素的高度和缩放属性
+// 			$('.js-fullheight').css({
+// 				'height': $(window).height(),
+// 				'transform': 'scale(' + scalePercentage + ')',
+// 				'transform-origin': 'center center'
+// 			});
+// 		});
+// 	};
+
+
+
+function adjustLayout() {
+    const container = document.querySelector('.containers-wrapper');
+    const fullHeightElements = document.querySelectorAll('.js-fullheight');
+    let scalePercentage;
+
+    // 获取窗口的宽高比
+    const aspectRatio = window.innerWidth / window.innerHeight;
+	if (isMobile.any()){
+    	if (aspectRatio < 0.65) { // 竖屏模式（宽高比小于1）
+        	container.style.width = '72%';
+        	scalePercentage = 1.3;
+    	} else {
+        	container.style.width = '100%';
+        	scalePercentage = 0.8;
+    }
+}
+    fullHeightElements.forEach(element => {
+        element.style.height = window.innerHeight + 'px';
+        element.style.transform = 'scale(' + scalePercentage + ')';
+    });
+}
+
+// 在窗口大小变化时调整
+window.addEventListener('resize', adjustLayout);
+
+
 	
 	// Parallax
 	var parallax = function() {
@@ -154,6 +186,7 @@
 
 	
 	$(function(){
+		adjustLayout();
 		contentWayPoint();
 		// goToTop();
 		loaderPage();
