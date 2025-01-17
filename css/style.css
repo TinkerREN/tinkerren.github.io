@@ -1368,7 +1368,15 @@ input[type="text"] {
   font-family: "ZCOOL QingKe HuangYou", Arial, serif;
   color: white; /* Text color */
   font-size: 32px; /* Adjust the font size as needed */
-  margin-top: 10px; /* Adjust the margin-top as needed */
+  margin-top: 8px; /* Adjust the margin-top as needed */
+  margin-bottom: 10px; /* Adjust the margin-bottom as needed */
+}
+
+.qr-code a {
+  font-family: "ZCOOL QingKe HuangYou", Arial, serif;
+  color: white; /* Text color */
+  font-size: 16px; /* Adjust the font size as needed */
+  margin-top: 8px; /* Adjust the margin-top as needed */
   margin-bottom: 10px; /* Adjust the margin-bottom as needed */
 }
 
@@ -1526,4 +1534,26 @@ input[type="text"] {
     height: 10px;
     padding-bottom: 1px;
   }
+}
+
+.friendly-link-container-hb {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 0, 0, 0.5); /* 黑色半透明背景 */
+  padding: 10px 16px 10px 10px;
+  border-radius: 100px; /* 圆角边框 */
+  width: fit-content; /* 自动计算左右边距，实现水平居中 */
+  transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+
+.friendly-link-container-hb:hover {
+  transform: scale(1.1); /* 鼠标悬停时变大 */
+}
+
+.friendly-link-container-hb:hover .qr-code {
+  opacity: 1;
+  visibility: visible;
+}
+.friendly-link-container-hb{
+  padding: 8px 10px;
 }
