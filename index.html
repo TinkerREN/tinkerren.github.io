@@ -33,16 +33,19 @@
         var ua = navigator.userAgent;
         var targetUrl;
 
-        if (ua.indexOf('QQ') !== -1) {
-            targetUrl = 'https://qm.qq.com/q/SrUo2Cv8UE';
-        } else if (ua.indexOf('WeChat') !== -1) {
+        //检测 UA
+        if (ua.indexOf('QQ') !== -1 || ua.indexOf('WeChat') !== -1) {
             targetUrl = 'https://qm.qq.com/q/SrUo2Cv8UE';
         }
 
         if (targetUrl) {
-            setTimeout(function() {
-                window.location.href = targetUrl;
-            }, 1000);
+            // 提示
+            var userConfirmed = confirm("当前使用QQ扫码，是否直接跳转到名片扩列？\n点击“否”的话可以查看我的其他社交账号哦~");
+            if (userConfirmed) {
+                setTimeout(function() {
+                    window.location.href = targetUrl;
+                }, 1000);
+            }
         }
     </script>
 	</head>
