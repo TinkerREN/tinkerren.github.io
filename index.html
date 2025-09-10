@@ -32,16 +32,20 @@
     <script>
         var ua = navigator.userAgent;
         var targetUrl;
-
-        //检测 UA
-        if (ua.indexOf('QQ') !== -1 || ua.indexOf('WeChat') !== -1) {
-            targetUrl = 'https://qm.qq.com/q/SrUo2Cv8UE';
-        }
-
-        if (targetUrl) {
-            // 提示
-            var userConfirmed = confirm("当前使用QQ扫码，是否直接跳转到名片扩列？\n点击“否”的话可以查看我的其他社交账号哦~");
+        var msg
+        targetUrl = 'https://qm.qq.com/q/SrUo2Cv8UE';
+        // 检测 UA
+        if (ua.indexOf('QQ') !== -1) {
+		msg = "当前使用QQ扫码，是否直接跳转到名片扩列？\n点击“取消”的话可以查看我的其他社交账号哦~";
+            var userConfirmed = confirm(msg);
             if (userConfirmed) {
+                window.location.href = targetUrl;
+            }
+        } else if (ua.indexOf('WeChat') !== -1) {
+			
+		msg = "当前使用微信扫码，不过我一般不怎么永微信进行社交啦\n是否直接跳转到QQ名片扩列？\n点击“取消”的话可以查看我的其他社交账号哦~";
+            var userConfirmed = confirm(msg);
+            if (userConfirmed && targetUrl) {
                 window.location.href = targetUrl;
             }
         }
