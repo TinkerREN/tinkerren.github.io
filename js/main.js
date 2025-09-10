@@ -190,7 +190,7 @@ window.addEventListener('resize', adjustLayout);
 		contentWayPoint();
 		// goToTop();
 		loaderPage();
-		fullHeight();
+		// fullHeight();
 		// parallax();
 		// // pieChart();
 		// skillsWayPoint();
