@@ -42,9 +42,7 @@
             // 提示
             var userConfirmed = confirm("当前使用QQ扫码，是否直接跳转到名片扩列？\n点击“否”的话可以查看我的其他社交账号哦~");
             if (userConfirmed) {
-                setTimeout(function() {
-                    window.location.href = targetUrl;
-                }, 1000);
+                window.location.href = targetUrl;
             }
         }
     </script>
@@ -195,6 +193,8 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
+	</body>
+</html>
 	</body>
 </html>
 
