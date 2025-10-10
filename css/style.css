@@ -1396,12 +1396,16 @@ input[type="text"] {
 .friendly-link-container {
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5); /* 黑色半透明背景 */
+  background: rgba(255, 255, 255, 0.15); /* 改为淡色透明背景 */
+  backdrop-filter: blur(10px); /* 添加毛玻璃模糊效果 */
+  -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
   padding: 10px 16px 10px 10px;
-  border-radius: 100px; /* 圆角边框 */
-  width: fit-content; /* 自动计算左右边距，实现水平居中 */
-  transition: transform 0.3s ease; /* 添加过渡效果 */
+  border-radius: 100px;
+  width: fit-content;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 添加轻微边框提升层次感 */
 }
+
 
 .friendly-link-container:hover {
   transform: scale(1.1); /* 鼠标悬停时变大 */
