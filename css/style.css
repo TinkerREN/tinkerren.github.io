@@ -1396,19 +1396,24 @@ input[type="text"] {
 .friendly-link-container {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.15); /* 改为淡色透明背景 */
-  backdrop-filter: blur(10px); /* 添加毛玻璃模糊效果 */
-  -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 10px 16px 10px 10px;
   border-radius: 100px;
   width: fit-content;
-  transition: transform 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* 添加轻微边框提升层次感 */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.6s ease,     /* 阴影渐变时间稍长一点 */
+    border-color 0.6s ease;   /* 边框亮度也柔和变化 */
 }
 
-
 .friendly-link-container:hover {
-  transform: scale(1.1); /* 鼠标悬停时变大 */
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .friendly-link-pic {
@@ -1439,30 +1444,52 @@ input[type="text"] {
   margin: 0 auto;
 }
 
+/* 初始状态：无背景、无发光 */
 .fh5co-social-icons i {
-  position: relative; /* 为伪元素定位做准备 */
-  display: inline-block; /* 确保可以使用宽度和高度 */
-  transition: transform 0.3s ease; /* 添加过渡效果 */
+  position: relative;
+  display: inline-block;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.5s ease,
+    background-color 0.5s ease;
 }
 
+/* 伪元素作为“发光毛玻璃背景” */
 .fh5co-social-icons i::after {
-  content: ""; /* 必须设置，即使没有内容 */
+  content: "";
   position: absolute;
-  top: 50%; /* 定位到图标的中心 */
-  left: 50%; /* 定位到图标的中心 */
-  width: 48px; /* 设置背景的宽度 */
-  height: 48px; /* 设置背景的高度 */
-  background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
-  opacity: 0; /* 初始透明度为0，使其不可见 */
-  transition: opacity 0.3s; /* 平滑过渡效果 */
-  z-index: -1; /* 确保背景位于图标下方 */
-  border-radius: 50%; /* 使背景成圆形 */
-  transform: translate(-50%, -50%); /* 确保背景准确居中 */
-  box-sizing: border-box; /* 确保边框包含在宽高内 */
+  top: 50%;
+  left: 50%;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: transparent; /* 初始无背景 */
+  backdrop-filter: none; /* 初始无模糊 */
+  -webkit-backdrop-filter: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition:
+    opacity 0.5s ease,
+    background-color 0.5s ease,
+    box-shadow 0.6s ease,
+    backdrop-filter 0.5s ease;
+  z-index: -1;
 }
 
+.friendly-link-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* 悬停时：柔光+毛玻璃+放大 */
 .fh5co-social-icons a:hover i::after {
-  opacity: 1; /* 鼠标悬停时使背景变为可见 */
+  background: rgba(255, 255, 255, 0.3); /* 毛玻璃底色 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.35); /* 轻微发光 */
+  opacity: 1;
 }
 
 .fh5co-social-icons a:hover i {
