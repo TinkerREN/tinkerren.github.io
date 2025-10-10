@@ -380,7 +380,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-social-icons li a {
   display: -moz-inline-stack;
   display: inline-block;
-  zoom: 1;
+  zoom: 1.2;
   *display: inline;
   color: #FF9000;
   padding-left: 10px;
@@ -1389,7 +1389,7 @@ input[type="text"] {
   font-family: "ZCOOL QingKe HuangYou", Arial, serif;
   color: white; /* Text color */
   font-size: 20px; /* Adjust the font size as needed */
-  margin-top: 10px; /* Adjust the margin-top as needed */
+  margin-top: 30px; /* Adjust the margin-top as needed */
   margin-bottom: 10px; /* Adjust the margin-bottom as needed */
 }
 
