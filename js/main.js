@@ -66,8 +66,8 @@ function adjustLayout() {
     const aspectRatio = window.innerWidth / window.innerHeight;
 	if (isMobile.any()){
     	if (aspectRatio < 0.65) { // 竖屏模式（宽高比小于1）
-        	container.style.width = '72%';
-        	scalePercentage = 1.3;
+        	container.style.width = '70%';
+        	scalePercentage = 1.4;
     	} else {
         	container.style.width = '100%';
         	scalePercentage = 0.8;

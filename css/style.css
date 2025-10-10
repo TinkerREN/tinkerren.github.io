@@ -1399,7 +1399,7 @@ input[type="text"] {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 10px 16px 10px 10px;
+  padding: 5px 11px 5px 5px;
   border-radius: 100px;
   width: fit-content;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -1417,8 +1417,8 @@ input[type="text"] {
 }
 
 .friendly-link-pic {
-  width: 50px; /* 设置图片大小 */
-  height: 50px; /* 设置图片大小 */
+  width: 40px; /* 设置图片大小 */
+  height: 40px; /* 设置图片大小 */
   border-radius: 50%; /* 圆形图片 */
   margin-right: 10px; /* 图片和文本之间的间距 */
 }
@@ -1436,11 +1436,11 @@ input[type="text"] {
 
 .containers-wrapper {
   display: flex;
-  gap: 12px; /* 元素间距 */
+  gap: 13px; /* 元素间距 */
   flex-wrap: wrap; /* 允许容器内元素换行 */
   justify-content: center; /* 水平居中 */
   margin: 0 25%; /* 左右各留下25%的空间 */
-  width: 100%; /* 容器的宽度为页面宽度的100% */
+  max-width: 70%; /* 容器的宽度为页面宽度的100% */
   margin: 0 auto;
 }
 
